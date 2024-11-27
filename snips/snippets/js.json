@@ -3,5 +3,10 @@
     "prefix": "clog",
     "body": ["console.log(${1:message})"],
     "description": "Console log"
+  },
+  "Color token intense black": {
+    "prefix": "cfb",
+    "body": ["colorToken=\"foreground-neutral-intense-on-elevation-base\""],
+    "description": "heading color"
   }
 }

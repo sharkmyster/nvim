@@ -132,6 +132,14 @@ return {
           },
         })
       end,
+
+      ["elixirls"] = function()
+        lspconfig.elixirls.setup({
+          -- you need to specify the executable command mannualy for elixir-ls
+          capabilities = capabilities,
+          cmd = { "/Users/danielsharkey/lsp/elixir-ls" },
+        })
+      end,
     })
   end,
 }

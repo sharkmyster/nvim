@@ -4,7 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/neodev.nvim",                   opts = {} },
   },
   config = function()
     -- import lspconfig plugin
@@ -84,20 +84,21 @@ return {
         lspconfig[server_name].setup({
           capabilities = capabilities,
         })
-      end,
-      ["svelte"] = function()
-        -- configure svelte server
-        lspconfig["svelte"].setup({
+
+        lspconfig.elixirls.setup({
+          -- you need to specify the executable command mannualy for elixir-ls
+          cmd = { "/Users/danny/lsp/elixir-ls/language_server.sh" },
           capabilities = capabilities,
-          on_attach = function(client, bufnr)
-            vim.api.nvim_create_autocmd("BufWritePost", {
-              pattern = { "*.js", "*.ts" },
-              callback = function(ctx)
-                -- Here use ctx.match instead of ctx.file
-                client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-              end,
-            })
-          end,
+        })
+
+        lspconfig.tailwindcss.setup({
+          init_options = {
+            userLanguages = {
+              elixir = "html-eex",
+              eelixir = "html-eex",
+              heex = "html-eex",
+            },
+          },
         })
       end,
       ["graphql"] = function()
@@ -134,4 +135,3 @@ return {
     })
   end,
 }
-

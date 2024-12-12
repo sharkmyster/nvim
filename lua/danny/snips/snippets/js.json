@@ -1,0 +1,30 @@
+{
+	"Print to console": {
+		"prefix": "cl",
+		"body": [
+			"console.log($1);"
+		],
+		"description": "Log output to console"
+	},
+	"Color token foreground-neutral-intense-on-elevation-base": {
+		"prefix": "cfb",
+		"body": [
+			"colorToken=\"foreground-neutral-intense-on-elevation-base\""
+		],
+		"description": "Color token black foreground"
+	},
+	"Color token foreground-neutral-normal-on-elevation-base": {
+		"prefix": "cfg",
+		"body": [
+			"colorToken=\"foreground-neutral-normal-on-elevation-base\""
+		],
+		"description": "Color token grey foreground"
+	},
+	"Color token foreground-action-normal-on-elevation-base": {
+		"prefix": "cfa",
+		"body": [
+			"colorToken=\"foreground-action-normal-on-elevation-base\""
+		],
+		"description": "Color token action foreground"
+	}
+}

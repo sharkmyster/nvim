@@ -41,7 +41,10 @@ return {
         "gitignore",
         "query",
         "vimdoc",
-        "c",
+        "elixir",
+        "eex",
+        "heex",
+        "go"
       },
       incremental_selection = {
         enable = true,

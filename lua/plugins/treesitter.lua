@@ -9,9 +9,9 @@ return {
 			incremental_selection = {
 				enable = true,
 				keymaps = {
-					init_selection = "<C-space>", -- Start selection
-					node_incremental = "<C-space>", -- Expand to parent
-					scope_incremental = "<C-s>", -- Expand to scope
+					init_selection = "<C-0>", -- Start selection
+					node_incremental = "<C-0>", -- Expand to parent
+					scope_incremental = "<C-9>", -- Expand to scope
 					node_decremental = "<BS>", -- Shrink
 				},
 			},

@@ -41,10 +41,11 @@ vim.opt.autoread = false
 
 -- vim.opt.winborder = "rounded"
 
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldenable = true
-vim.o.foldlevel = 99
+-- vim.o.foldmethod = 'expr'
+-- vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+-- vim.o.foldlevel = 99
+-- vim.o.foldnestmax = 3
+-- vim.o.foldenable = false
 
 vim.diagnostic.config({
     virtual_text = {
@@ -60,3 +61,10 @@ vim.diagnostic.config({
         source = 'always',
     },
 })
+
+local orig_util = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+    opts = opts or {}
+    opts.border = opts.border or "rounded"
+    return orig_util(contents, syntax, opts, ...)
+end

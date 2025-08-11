@@ -15,6 +15,8 @@ keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" })
 -- Open NetRW explorer
 -- keymap.set("n", "<C-p>", ":Ex<CR>", { desc = "Open explorer" })
 
+keymap.set("n", "<leader>ee", "<cmd>Oil --float<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
+
 keymap.set("n", "<leader>j", ":bp<CR>", { desc = "Previous buffer" })
 keymap.set("n", "<leader>k", ":bn<CR>", { desc = "Next buffer" })
 keymap.set("n", "<leader>bd", ":bp | bd #<CR>", { desc = "Close buffer safely" })
@@ -62,13 +64,11 @@ vim.keymap.set("n", "<leader>da", vim.diagnostic.setqflist, { desc = "Show [A]ll
 
 vim.keymap.set("n", "<leader>dc", vim.lsp.buf.code_action, { desc = "LSP: [D]iagnostic / [C]ode action" })
 
-
-
-vim.keymap.set('n', '<F7>', ':FloatermNew<CR>', { silent = true })
-vim.keymap.set('t', '<F7>', [[<C-\><C-n>:FloatermNew<CR>]], { silent = true })
-vim.keymap.set('n', '<F8>', ':FloatermPrev<CR>', { silent = true })
-vim.keymap.set('t', '<F8>', [[<C-\><C-n>:FloatermPrev<CR>]], { silent = true })
-vim.keymap.set('n', '<F9>', ':FloatermNext<CR>', { silent = true })
-vim.keymap.set('t', '<F9>', [[<C-\><C-n>:FloatermNext<CR>]], { silent = true })
-vim.keymap.set('n', '<F12>', ':FloatermToggle<CR>', { silent = true })
-vim.keymap.set('t', '<F12>', [[<C-\><C-n>:FloatermToggle<CR>]], { silent = true })
+vim.keymap.set("n", "<F7>", ":FloatermNew<CR>", { silent = true })
+vim.keymap.set("t", "<F7>", [[<C-\><C-n>:FloatermNew<CR>]], { silent = true })
+vim.keymap.set("n", "<F8>", ":FloatermPrev<CR>", { silent = true })
+vim.keymap.set("t", "<F8>", [[<C-\><C-n>:FloatermPrev<CR>]], { silent = true })
+vim.keymap.set("n", "<F9>", ":FloatermNext<CR>", { silent = true })
+vim.keymap.set("t", "<F9>", [[<C-\><C-n>:FloatermNext<CR>]], { silent = true })
+vim.keymap.set("n", "<F12>", ":FloatermToggle<CR>", { silent = true })
+vim.keymap.set("t", "<F12>", [[<C-\><C-n>:FloatermToggle<CR>]], { silent = true })

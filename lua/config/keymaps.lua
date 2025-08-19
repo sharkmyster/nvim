@@ -15,7 +15,7 @@ keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" })
 -- Open NetRW explorer
 -- keymap.set("n", "<C-p>", ":Ex<CR>", { desc = "Open explorer" })
 
-keymap.set("n", "<leader>ee", "<cmd>Oil --float<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
+keymap.set("n", "<leader>O", "<cmd>Oil --float<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
 
 keymap.set("n", "<leader>j", ":bp<CR>", { desc = "Previous buffer" })
 keymap.set("n", "<leader>k", ":bn<CR>", { desc = "Next buffer" })
@@ -26,10 +26,6 @@ keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
 keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
 keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
 keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
-
--- Code folding
-keymap.set("n", "<leader>c", "zc", { noremap = true, silent = true })
-keymap.set("n", "<leader>o", "zo", { noremap = true, silent = true })
 
 -- Diagnostic navigation
 vim.keymap.set("n", "<leader>dd", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })

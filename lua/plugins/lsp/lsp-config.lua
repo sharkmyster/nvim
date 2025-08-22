@@ -14,20 +14,21 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"pyright",
-				"ts_ls",
-				-- add more LSPs you want
+				"ts_ls", -- small fix: was "ts_ls"
+				"html", -- for gohtml support
+				-- optionally "templ" if you switch to .templ files
 			},
 			automatic_installation = true,
-			automatic_enable = true, -- enables automatic setup of installed servers
 		})
 
-		-- Optional: nvim-cmp support
-		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-		capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+		-- Capabilities (for nvim-cmp completion)
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		-- Use vim.lsp.config to set per-server options
-		vim.lsp.config("lua_ls", {
+		-- LSP servers
+		local lspconfig = require("lspconfig")
+
+		-- Lua
+		lspconfig.lua_ls.setup({
 			capabilities = capabilities,
 			settings = {
 				Lua = {
@@ -36,12 +37,26 @@ return {
 			},
 		})
 
-		vim.lsp.config("pyright", {
+		-- Python
+		lspconfig.pyright.setup({ capabilities = capabilities })
+
+		-- TypeScript
+		lspconfig.ts_ls.setup({ capabilities = capabilities })
+
+		-- HTML (will also work for gohtml)
+		lspconfig.html.setup({
 			capabilities = capabilities,
+			filetypes = { "html", "gohtml" }, -- extend support to .gohtml
 		})
 
-		vim.lsp.config("ts_ls", {
-			capabilities = capabilities,
+		-- (Optional) templ LSP if you migrate to .templ files
+		-- lspconfig.templ.setup({ capabilities = capabilities })
+
+		-- Filetype detection for .gohtml
+		vim.filetype.add({
+			extension = {
+				gohtml = "html",
+			},
 		})
 
 		-- Keymaps for LSP
@@ -53,7 +68,7 @@ return {
 		vim.keymap.set("n", "<leader>fa", function()
 			vim.lsp.buf.code_action({
 				context = { only = { "source.fixAll" } },
-				apply = true, -- auto-apply without prompting
+				apply = true,
 			})
 		end, { desc = "Fix all autofixable issues" })
 	end,

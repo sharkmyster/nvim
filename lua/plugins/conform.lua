@@ -22,6 +22,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				go = { "gofumpt" },
+				gohtml = { "prettier" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -39,4 +40,3 @@ return {
 		end, { desc = "Format file or range (in visual mode)" })
 	end,
 }
-

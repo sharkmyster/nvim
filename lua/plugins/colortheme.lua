@@ -4,8 +4,8 @@ return {
 	priority = 1000, -- Ensure the theme is loaded first
 	config = function()
 		require("ayu").setup({
-			mirage = true, -- Use Ayu Mirage variant
-			overrides = {}, -- Additional color overrides
+			mirage = true,   -- Use Ayu Mirage variant
+			overrides = {},  -- Additional color overrides
 		})
 		vim.cmd("colorscheme ayu") -- Set the colorscheme
 		vim.api.nvim_set_hl(0, "@markup.link.label", { underline = false })
@@ -15,5 +15,6 @@ return {
 		vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#4db8d5" })
 		vim.api.nvim_set_hl(0, "SpecialKey", { fg = "#e6b450" })
 		vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#4db8d5" })
+		vim.api.nvim_set_hl(0, "IncSearch", { bg = "#ff8800", fg = "#000000", bold = true })
 	end,
 }

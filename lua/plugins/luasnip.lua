@@ -17,9 +17,13 @@ return {
 			history = false,
 			updateevents = "TextChanged,TextChangedI",
 			enable_autosnippets = true,
+
 		})
 
-		-- 🔑 Keymaps (use Ctrl-j / Ctrl-k instead of Tab to avoid conflicts)
+		luasnip.filetype_extend("typescript", { "javascript" })
+		luasnip.filetype_extend("typescriptreact", { "javascript" })
+		luasnip.filetype_extend("javascriptreact", { "javascript" })
+
 		vim.keymap.set({ "i", "s" }, "<C-j>", function()
 			if luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()

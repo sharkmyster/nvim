@@ -22,7 +22,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				go = { "gofumpt" },
-				gohtml = { "prettier" },
+				gohtml = { "templ" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

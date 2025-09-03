@@ -1,0 +1,7 @@
+{
+  "If error check": {
+    "prefix": "iferr",
+    "body": ["if err != nil {", "\t$0", "}"],
+    "description": "Go if err != nil check"
+  }
+}

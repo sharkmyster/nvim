@@ -19,7 +19,7 @@ keymap.set("n", "<leader>O", "<cmd>Oil --float<CR>", { desc = "Toggle file explo
 
 keymap.set("n", "<leader>j", ":bp<CR>", { desc = "Previous buffer" })
 keymap.set("n", "<leader>k", ":bn<CR>", { desc = "Next buffer" })
-keymap.set("n", "<leader>bd", ":bp | bd #<CR>", { desc = "Close buffer safely" })
+keymap.set("n", "<leader>bb", ":bp | bd #<CR>", { desc = "Close buffer safely" })
 
 -- Navigating splits
 keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })

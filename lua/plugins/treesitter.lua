@@ -3,7 +3,18 @@ return {
 	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter.configs").setup({
-			ensure_installed = { "lua", "python", "javascript", "go", "typescript", "tsx", "bash", "css", "html" },
+			ensure_installed = {
+				"lua",
+				"python",
+				"javascript",
+				"go",
+				"typescript",
+				"tsx",
+				"bash",
+				"css",
+				"html",
+				"c_sharp",
+			},
 			highlight = { enable = true },
 			indent = { enable = true },
 			incremental_selection = {

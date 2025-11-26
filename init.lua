@@ -21,3 +21,13 @@ vim.filetype.add({
         [".aliases"] = "bash",
     },
 })
+
+vim.api.nvim_create_user_command("LspClients", function()
+    local clients = vim.lsp.get_clients({ bufnr = 0 })
+    local lines = {}
+    for _, client in ipairs(clients) do
+        table.insert(lines, string.format("%s (id=%d)", client.name, client.id))
+    end
+    vim.cmd("new")
+    vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+end, {})
